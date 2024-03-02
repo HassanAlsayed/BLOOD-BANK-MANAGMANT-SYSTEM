@@ -1,0 +1,9 @@
+set MYSQL_USER=root
+set MYSQL_PASSWORD=DATABASE.MYSQL
+set MYSQL_DATABASE=bloodbankmanagmentsystem
+
+mysql -u %MYSQL_USER% -p%MYSQL_PASSWORD% -e "CREATE DATABASE IF NOT EXISTS %MYSQL_DATABASE%;"
+mysql -u %MYSQL_USER% -p%MYSQL_PASSWORD% %MYSQL_DATABASE% < createTables.sql
+mysql -u %MYSQL_USER% -p%MYSQL_PASSWORD% %MYSQL_DATABASE% < Indexes.sql
+mysql -u %MYSQL_USER% -p%MYSQL_PASSWORD% %MYSQL_DATABASE% < Security.sql
+mysql -u %MYSQL_USER% -p%MYSQL_PASSWORD% %MYSQL_DATABASE% < Triggers.sql
